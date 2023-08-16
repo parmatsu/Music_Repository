@@ -36,7 +36,7 @@
       <div>
         <p>{{ $track->title }}</p>
         <audio controls>
-            <source src="{{ asset($track->file_path) }}" type="audio/mp3">
+            <source src="{{ asset($track->music_file) }}" type="audio/mp3">
         </audio>
       </div>
           @endforeach

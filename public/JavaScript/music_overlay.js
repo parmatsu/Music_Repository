@@ -7,13 +7,13 @@ tracks.forEach(track => {
     track.addEventListener('click', () => {
         const src = track.getAttribute('data-src');
         audioSource.src = src;
-        audioPlayer.load();
-        audioPlayer.play();
+        overlayChild.load();
+        overlayChild.play();
         overlay.style.display = 'block';
     });
 });
 
 overlayChild.addEventListener('click', () => {
-    audioPlayer.pause();
+    overlayChild.pause();
     overlayChild.style.display = 'none';
 });
