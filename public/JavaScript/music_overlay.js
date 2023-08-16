@@ -1,7 +1,7 @@
-const tracks = document.querySelectorAll('track');
+const tracks = document.querySelectorAll('.track');
 const overlay = document.getElementById('overlay');
 const audioSource = document.getElementById('audio_source');
-const audioPlayer = document.getElementById('audio_player');
+const overlayChild = document.getElementById('overlay_child');
 
 tracks.forEach(track => {
     track.addEventListener('click', () => {
@@ -13,7 +13,7 @@ tracks.forEach(track => {
     });
 });
 
-overlay.addEventListener('click', () => {
+overlayChild.addEventListener('click', () => {
     audioPlayer.pause();
-    overlay.style.display = 'none';
+    overlayChild.style.display = 'none';
 });
