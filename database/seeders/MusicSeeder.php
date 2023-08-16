@@ -17,12 +17,12 @@ class MusicSeeder extends Seeder
      */
     public function run()
     {
-        $musicFilePath 
-                = '/home/ec2-user/environment/platform/resources/music/10℃.mp3';
-                
-        $storagePath = 'music_files/' . basename($musicFilePath);
+        $musicFilePath = public_path('music_path/10℃.mp3');
+        $encodedFileName = urlencode(basename($musicFilePath));
+
+        $storagePath = 'public/music_files/' . $encodedFileName;
         Storage::put($storagePath, file_get_contents($musicFilePath));
-        
+
         DB::table('music')->insert([
                 'title' => '10℃',
                 'composer' => 'しゃろう',
