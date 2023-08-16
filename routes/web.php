@@ -16,4 +16,5 @@ use App\Http\Controllers\MusicController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/bgm', [MusicController::class, 'index']);
 Route::get('/musiclist', [MusicController::class, 'index']);

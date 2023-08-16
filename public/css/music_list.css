@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+/*ヘッダー内容*/
+header {
+    display: flex;
+    margin-top: -20px;
+    border-bottom: 2px solid;
+}
+
+#top_title {
+    font-size: 35px;
+    border-right: 2px solid;
+    padding-right: 20px;
+    
+}
+
+#top_phrase {
+    font-size: 12px;
+    margin-top: 65px;
+   margin-left: -230px;
+}
+
+/*グローバルナビゲーション*/
+.GB_item {
+    margin-left: auto;
+}
+
+.GB_item ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.GB_item li {
+    margin: 0;
+    border-left: 2px solid #ccc;
+}
+
+.GB_item li:last-child {
+    border: 2px solid #ccc;
+    margin-left: 7px;
+}
+
+.GB_item li:nth-last-child(2) {
+    border-right: 2px solid #ccc;
+}
+
+.GB_item a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 15px;
+    transition: background-color 0.2s;
+}
+.GB_item a:hover {
+    background-color: #f0f0f0;
+}
+
+/*項目レイアウト*/
+.contents {
+    font-size: 25px;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    padding-left: 15px;
+    width: 400px;
+}
+
+/*左端サブメニュー*/
+.sub_menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 20%;
+    left: 0px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0.1, 0.1);
+    
+}
+
+.sub_menu li {
+    padding: 0;
+    text-align: center;
+    border-bottom: 1px solid;
+    border-bottom-color: #dddddd;
+}
+.sub_menu li:last-child {
+    margin-bottom: 300px;
+}
+
+.sub_menu a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 15px;
+    transition: background-color 0.2s;
+    
+}
+
+.sub_menu a:hover {
+    background-color: #f0f0f0;
+}
+
+/*ページ内容*/
+.container {
+    position:absolute;
+    top: 20%;
+    left: 400px;
+}
+
+/*トラック再生（オーバーレイ）*/
+.overlay {
+    
+    position: fixed;
+    top: 100px;
+    left: 300px;
+    width: 60%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+#audio_player {
+    position: absolute;
+    top: 50%;
+    left: 33%;
+    
+}

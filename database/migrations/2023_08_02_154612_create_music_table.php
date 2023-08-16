@@ -19,7 +19,7 @@ return new class extends Migration
             $table->String('composer',15);
             $table->String('genre',10);
             $table->binary('music_file');
-            $table->timestamp('upload_date')->nullable();
+            $table->timestamp('upload_date')->now();
             $table->timestamps();
         });
     }

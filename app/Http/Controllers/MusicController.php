@@ -9,6 +9,6 @@ class MusicController extends Controller
 {
     public function index(Music $music)
     {
-        return $music->get();
+        return view('music.index')->with(['track' => $music->get()]);
     }
 }
