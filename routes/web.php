@@ -18,3 +18,6 @@ Route::get('/', function () {
 });
 Route::get('/bgm', [MusicController::class, 'index']);
 Route::get('/musiclist', [MusicController::class, 'index']);
+Route::get('/posted_tracks', [MusicController::class, 'posted']);
+Route::get('/posting', [MusicController::class, 'posting']);
+Route::post('/upload', [MusicController::class, 'upload']);
