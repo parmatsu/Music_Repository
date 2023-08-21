@@ -20,7 +20,7 @@ class MusicSeeder extends Seeder
         $musicFilePath = public_path('music_path/10℃.mp3');
         $encodedFileName = urlencode(basename($musicFilePath));
 
-        $storagePath = 'public/music_files/' . $encodedFileName;
+        $storagePath = 'music_files/' . $encodedFileName;
         Storage::put($storagePath, file_get_contents($musicFilePath));
 
         DB::table('music')->insert([

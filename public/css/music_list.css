@@ -111,7 +111,7 @@ header {
 
 /*トラック再生（オーバーレイ）*/
 .overlay {
-    
+    display: none;
     position: fixed;
     top: 100px;
     left: 300px;
