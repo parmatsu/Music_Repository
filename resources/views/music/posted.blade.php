@@ -9,32 +9,14 @@
         <link rel="stylesheet" href="{{ asset('css/music_list.css') }}">
     </head>
     <body>
-        <header>
-            <h1 id='top_title'>Music Camp</h1>
-            <p id='top_phrase'>-音楽で心に灯火を-</p>
-            <nav class=GB_item>
-                <ul>
-                    <li><a href="/bgm">BGM</a></li>
-                    <li><a href="#">GBナビ</a></li>
-                    <li><a href="#">GBナビ</a></li>
-                    <li><a href="#">GBナビ</a></li>
-                    <li><a href="#">icon</a></li>
-                </ul>
-            </nav>
-            <div class=sub_menu>
-                <ul>
-                    <li><a href="#">検索</a></li>
-                    <li><a href="/posted_tracks">投稿したトラック</a></li>
-                    <li><a href="#">いいねしたトラック</a></li>
-                    <li><a href="#">ダウンロード済みのトラック</a></li>
-                </ul>
-            </div>
-        </header>
+        
+        @include('music.shared_content.shared_content')
+        
         <div class='container'>
-        　<h1 class='contents'> {ユーザ} の投稿したトラック</h1>
+        　<h1 class='contents'> {{ Auth::user()->name }} の投稿したトラック</h1>
         　<a href="/posting" class='posting'>新規投稿する</a>
         　<div class='play_posted_track'>
-             @foreach($music as $track)
+             @foreach($own_music_tracks as $track)
                 @if(empty($track->music_file))
                  <p>Nothing on the track you posted.</p>
                 @else
@@ -45,9 +27,15 @@
                    @endif
                  <h3>{{ $track->title}}</h3>
                 @endif
+                
+                @if(!empty($track->user->name))
+                <p>{{ $track->user->name }}</p>
+                @endif
              @endforeach
         　</div>
-        　
+        　<div class='paginate'>
+            {{ $own_music_tracks->links() }}
+        　</div>
         </div>
         
     </body>

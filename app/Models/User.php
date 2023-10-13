@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Music;
+use Auth;
 
 class User extends Authenticatable
 {
@@ -41,4 +43,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    public function music_tracks()
+    {
+        return $this->hasMany(Music::class);
+    }
+    
+    public function getOwnPaginateByLimit(int $limit_count = 8)
+    {
+        return $this::with('music_tracks')->find(Auth::id())->music_tracks()->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    }
 }
