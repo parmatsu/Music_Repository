@@ -9,30 +9,12 @@
         <link rel="stylesheet" href="{{ asset('css/music_list.css') }}">
     </head>
     <body>
-        <header>
-            <h1 id='top_title'>Music Camp</h1>
-            <p id='top_phrase'>-音楽で心に灯火を-</p>
-            <nav class=GB_item>
-                <ul>
-                    <li><a href="/bgm">BGM</a></li>
-                    <li><a href="#">GBナビ</a></li>
-                    <li><a href="#">GBナビ</a></li>
-                    <li><a href="#">GBナビ</a></li>
-                    <li><a href="#">icon</a></li>
-                </ul>
-            </nav>
-            <div class=sub_menu>
-                <ul>
-                    <li><a href="#">検索</a></li>
-                    <li><a href="/posted_tracks">投稿したトラック</a></li>
-                    <li><a href="#">いいねしたトラック</a></li>
-                    <li><a href="#">ダウンロード済みのトラック</a></li>
-                </ul>
-            </div>
-        </header>
+        
+        @include('music.shared_content.shared_content')
+        
         <div class='container'>
-        　<h1 class='contents'>BGM一覧</h1>
-        　@foreach ($tracks as $track)
+        　<h1 class='contents'>人気のあるトラック</h1>
+        　@foreach ($music as $track)
            <div>
              <p>{{ $track->title }}</p>
              <audio controls>

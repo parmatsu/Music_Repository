@@ -7,6 +7,17 @@ header {
     border-bottom: 2px solid;
 }
 
+.top_page {
+    text-decoration: none;
+    color: #AD1212;
+    transition: color 1.0s ease;
+}
+.top_page:hover {
+    color: #F00000;
+    text-shadow: 0 0 10px rgba(255, 255, 0, 0.4);
+    cursor: pointer;
+}
+
 #top_title {
     font-size: 35px;
     border-right: 2px solid;
@@ -16,8 +27,8 @@ header {
 
 #top_phrase {
     font-size: 12px;
-    margin-top: 65px;
-   margin-left: -230px;
+    margin-top: -35px;
+   margin-left: 10px;
 }
 
 /*グローバルナビゲーション*/

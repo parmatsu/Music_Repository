@@ -11,12 +11,15 @@ class MusicController extends Controller
 {
     public function index(Music $music)
     {
-        $tracks = Music::all();
-        return view('music.index')->with(['tracks' => $tracks]);
+        return view('music.index')->with(['music' => $music->get()]);
+    }
+    public function bgm(Music $music)
+    {
+        return view('music.bgm')->with(['music' => $music->get()]);
     }
     public function posted(Music $music)
     {
-        return view('music.posted')->with(['music' => $music ->get()]);
+        return view('music.posted')->with(['music'=>$music->get()]);
     }
     public function posting()
     {
@@ -28,7 +31,7 @@ class MusicController extends Controller
     public function upload(MusicRequest $request, Music $music)
     {
         $input = $request['music'];
-        
+        $input += ['user_id' => $request->user()->id];
         if($request->file('music_file')) {
             $musicPath = Cloudinary::uploadFile($request->file('music_file')->getRealPath())->getSecurePath();
             $input += ['music_file' => $musicPath];
