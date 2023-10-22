@@ -22,11 +22,6 @@
              </audio>
            </div>
           @endforeach
-          <div class='overlay' id='overlay'>
-              <audio controls id='overlay_child'>
-                  <source id='audio_source' src='{{ asset($track->music_file) }}' type=audio/mp3>
-              </audio>
-          </div>
         </div>
        <script src="JavaScript/music_overlay.js"></script>
     </body>
