@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('music', function (Blueprint $table) {
             $table->id();
-            $table->String('title', 30);
-            $table->String('composer',15);
-            $table->String('genre',10);
+            $table->string('title', 30);
+            $table->string('composer',15);
+            $table->string('genre',10);
             $table->text('music_file');
             $table->text('music_pic')->nullable();
-            $table->timestamp('upload_date')->now();
+            $table->timestamp('upload_date')->nullable();
             $table->timestamps();
         });
     }

@@ -17,19 +17,25 @@ class MusicSeeder extends Seeder
      */
     public function run()
     {
-        $musicFilePath = public_path('music_path/10℃.mp3');
-        $encodedFileName = urlencode(basename($musicFilePath));
-
-        $storagePath = 'music_files/' . $encodedFileName;
-        Storage::put($storagePath, file_get_contents($musicFilePath));
 
         DB::table('music')->insert([
+            [
                 'title' => '10℃',
                 'composer' => 'しゃろう',
                 'genre' => 'chill',
-                'music_file' => $storagePath,
+                'music_file' => 'https://res.cloudinary.com/drttytw1k/video/upload/v1693480773/zljxjsd4nykyxvmdd7my.mp3',
                 'upload_date' => now(),
-                
+                'user_id' => '0',
+    
+            ],
+            [
+                'title' => 'Blessing',
+                'composer' => 'halyosy',
+                'genre' => 'J-POP',
+                'music_file' => 'https://res.cloudinary.com/drttytw1k/video/upload/v1693480773/zljxjsd4nykyxvmdd7my.mp3',
+                'upload_date' => now(),
+                'user_id' => '0',
+            ]
              ]);
     }
 }
