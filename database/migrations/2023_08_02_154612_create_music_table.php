@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('genre',10);
             $table->text('music_file');
             $table->text('music_pic')->nullable();
-            $table->timestamp('upload_date')->default(now());
             $table->timestamps();
         });
     }

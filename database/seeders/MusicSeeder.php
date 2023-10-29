@@ -24,7 +24,8 @@ class MusicSeeder extends Seeder
                 'composer' => 'しゃろう',
                 'genre' => 'chill',
                 'music_file' => 'https://res.cloudinary.com/drttytw1k/video/upload/v1693480773/zljxjsd4nykyxvmdd7my.mp3',
-                'upload_date' => now(),
+                'created_at' => now(),
+                'updated_at' => now(),
                 'user_id' => '0',
     
             ],
@@ -33,7 +34,8 @@ class MusicSeeder extends Seeder
                 'composer' => 'halyosy',
                 'genre' => 'J-POP',
                 'music_file' => 'https://res.cloudinary.com/drttytw1k/video/upload/v1693480773/zljxjsd4nykyxvmdd7my.mp3',
-                'upload_date' => now(),
+                'created_at' => now(),
+                'updated_at' => now(),
                 'user_id' => '0',
             ]
              ]);
